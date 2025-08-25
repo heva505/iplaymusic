@@ -1,0 +1,81 @@
+@use "../utils/_variables.scss" as *;
+@use "../utils/_mixins.scss";
+
+.featured {
+  padding: 0 2.5rem;
+  margin-bottom: 10rem;
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: $font-size-heading-lg;
+    font-weight: $font-weight-bold;
+    background: $gradient-primary;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: left;
+    margin-bottom: 3.5rem;
+    @include ellipsis-1line;
+  }
+
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+  }
+
+  &__card {
+    position: relative;
+    background: $color-white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 5px 12.5px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+    display: grid;
+  }
+
+  &__overlay {
+    grid-area: 1 / 1;
+    background: linear-gradient(to top left, black, transparent);
+  }
+
+  &__image {
+    grid-area: 1 / 1;
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+
+  &__content {
+    grid-area: 1 / 1;
+    align-self: end;
+    padding: 2rem;
+    color: $color-white;
+    margin-bottom: $space-7;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__heading {
+    font-size: $font-size-heading-md;
+    font-weight: $font-weight-bold;
+    max-width: 250px;
+  }
+
+  &__artist {
+    font-size: $font-size-caption;
+    color: $color-white;
+    font-weight: 200;
+    margin-bottom: $space-2;
+  }
+
+  &__subtext {
+    font-size: $font-size-caption;
+    color: #eee;
+    font-weight: 200;
+  }
+}

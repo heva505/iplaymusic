@@ -1,0 +1,142 @@
+@use "../utils/_variables.scss" as *;
+
+.login {
+  &__section {
+    width: 100%;
+    margin: 0 auto;
+    padding: 3.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100dvh;
+    opacity: 1;
+    transform: scale(1);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+
+    &.fade-out {
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+    }
+
+    &.fade-in {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &__header {
+    margin-bottom: $font-size-body-lg;
+    text-align: left;
+    width: 100%;
+    margin-bottom: auto;
+  }
+
+  &__title {
+    font-family: "Poppins", sans-serif;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-heading-lg;
+    color: $color-dark-purple;
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    .form {
+      &__group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        position: relative;
+      }
+
+      &__label {
+        font-weight: $font-weight-semibold;
+        font-size: $font-size-body-md;
+        color: $color-dark-purple;
+      }
+
+      &__input-wrapper {
+        display: flex;
+        align-items: center;
+        position: relative;
+      }
+
+      &__input {
+        flex: 1;
+        padding: 1.6rem 0;
+        border: none;
+        border-bottom: 3px solid $color-dark-purple;
+        font-family: "Poppins", sans-serif;
+        font-size: $font-size-body-md;
+        outline: none;
+
+        &::placeholder {
+          color: $color-dark-purple;
+        }
+      }
+
+      &__icon {
+        position: absolute;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $color-dark-purple;
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__button {
+    margin-top: 3.7rem;
+    padding: 1rem;
+    font-weight: bold;
+    border: 2px solid $color-dark-purple;
+    background: transparent;
+    color: $color-dark-purple;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background: $color-dark-purple;
+      color: #fff;
+    }
+  }
+
+  &__biometric {
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+    text-align: center;
+
+    .biometric {
+      &__button {
+        background: $color-pink;
+        border: none;
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        cursor: pointer;
+        font-size: 3.5rem;
+
+        svg {
+          color: #fff;
+        }
+      }
+
+      &__label {
+        margin-top: 1.3rem;
+        font-size: 1.5rem;
+        color: $color-dark-purple;
+      }
+    }
+  }
+}

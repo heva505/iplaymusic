@@ -1,0 +1,161 @@
+@use "../utils/_variables.scss" as *;
+
+.categories {
+  padding: 0 2.5rem;
+  margin-bottom: 10rem;
+
+  &__arrow {
+    display: inline-flex;
+    transition: transform 0.3s ease;
+  }
+
+  &__title {
+    font-size: $font-size-heading-lg;
+    font-weight: $font-weight-bold;
+    background: $gradient-primary;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: left;
+    margin-bottom: 3.5rem;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  &__item {
+    border-radius: 0.6rem;
+    overflow: hidden;
+    font-family: $font-family-base;
+    transition: background-color 0.3s ease;
+
+    summary {
+      border-radius: 0.6rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-body-md;
+      padding: 1.5rem 2.5rem;
+      color: $color-white;
+      transition: background-color 0.3s ease;
+
+      outline: none;
+      user-select: none;
+
+      &:hover {
+        opacity: 0.95;
+      }
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+    }
+
+    &[open] {
+      .categories__sublist {
+        display: flex;
+        flex-direction: column;
+        gap: 1.4rem;
+        max-height: 1000px;
+        padding: 2.25rem;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__sublist {
+    list-style: none;
+    margin: 0;
+    padding: 0 2.5rem;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+  }
+
+  &__subitem {
+    background-color: rgba($color-white, 0.05);
+    border-radius: 0.4rem;
+    color: $color-dark-purple;
+    overflow: hidden;
+    transition: all 0.3s ease;
+
+    summary {
+      cursor: pointer;
+      padding: 0.8rem 1rem;
+      font-weight: $font-weight-light;
+      transition: all 0.3s ease;
+      color: $color-dark-purple;
+      font-size: $font-size-body-sm;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &::-webkit-details-marker {
+        display: none;
+      }
+
+      &:hover {
+        background-color: rgba($color-white, 0.08);
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    // Subitem expand animation
+    .categories__subcontent {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      padding: 0 1rem;
+      transition: max-height 0.4s ease, opacity 0.4s ease, padding 0.4s ease;
+    }
+
+    &[open] {
+      .categories__arrow {
+        transform: rotate(90deg);
+      }
+
+      .categories__subcontent {
+        max-height: 500px;
+        opacity: 1;
+        padding: 1rem;
+      }
+    }
+  }
+
+  // === Color classes ===
+  .hot-pink {
+    background-color: $color-hot-pink;
+  }
+  .red {
+    background-color: $color-red;
+  }
+  .orange {
+    background-color: $color-orange;
+  }
+  .yellow {
+    background-color: $color-yellow;
+  }
+  .green {
+    background-color: $color-green;
+  }
+  .dark-green {
+    background-color: $color-dark-green;
+  }
+  .cyan {
+    background-color: $color-deep-blue;
+  }
+  .blue {
+    background-color: $color-deep-blue;
+  }
+  .deep-blue {
+    background-color: $color-deep-blue;
+  }
+}

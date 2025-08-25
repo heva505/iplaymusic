@@ -1,0 +1,149 @@
+@use "../utils/_variables.scss" as *;
+
+.player {
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 5rem;
+  }
+
+  &__vinyl-wrapper {
+    position: relative;
+    margin: 2rem 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../../../public/images/sound-wave-3.png);
+    background-repeat: repeat-x;
+    background-position: center;
+    background-size: 60% 100%;
+    animation: pulse-wave 10s ease-in-out infinite;
+    margin-bottom: 10rem;
+  }
+
+  &__vinyl {
+    width: 300px;
+    height: 300px;
+    animation: spin 6s linear infinite;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+  }
+
+  &__info {
+    margin-bottom: $font-size-body-lg;
+    .player__title {
+      font-size: $font-size-body-lg;
+      font-weight: $font-weight-bold;
+      color: $color-dark-purple;
+    }
+
+    .player__artist {
+      font-size: $font-size-body-md;
+      color: $color-dark-purple;
+      opacity: 0.8;
+      margin-top: 0.3rem;
+    }
+  }
+
+  &__progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: $font-size-body-lg;
+    padding: 0 2.5rem;
+
+    .player__slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 3px;
+      background: $gradient-primary;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 1.2rem;
+        height: 1.2rem;
+        background: $color-pink;
+        border-radius: 50%;
+        cursor: pointer;
+        outline: 6px solid rgba($color-pink, 0.3);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    .player__time-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      font-size: 0.875rem;
+      color: $color-dark-purple;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 0 2.5rem;
+
+    .player__button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      &--play {
+        background: $gradient-primary;
+        padding: 1rem;
+        border-radius: 50%;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+
+        svg {
+          color: white;
+        }
+      }
+
+      &--skip-back svg,
+      &--skip-forward svg {
+        fill: url(#dock-gradient);
+      }
+
+      &:nth-child(even) svg {
+        color: $color-dark-purple;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulse-wave {
+  0%,
+  100% {
+    background-size: 60% 100%;
+  }
+  50% {
+    background-size: 100% 100%;
+  }
+}

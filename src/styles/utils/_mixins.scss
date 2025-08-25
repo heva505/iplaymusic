@@ -1,0 +1,13 @@
+@use "_variables.scss" as *;
+
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin ellipsis-1line {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

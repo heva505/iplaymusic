@@ -1,0 +1,65 @@
+@use "../utils/_variables.scss" as *;
+
+.header {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 3rem 2.5rem;
+  }
+
+  &__icon-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__title-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  &__title {
+    font-size: $font-size-body-md;
+    font-weight: 200;
+    letter-spacing: 0.25rem;
+    text-transform: uppercase;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: $color-white;
+  }
+
+  &__icon-button {
+    background: none;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+}
+
+.mode-light {
+  color: $color-dark-purple !important;
+}
+
+.mode-dark {
+  color: $color-white !important;
+}
+
+.transparent {
+  background: transparent !important;
+}

@@ -1,0 +1,20 @@
+@use "../utils/_variables.scss" as *;
+
+.marquee-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &.overflowing {
+    animation: marquee 8s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}

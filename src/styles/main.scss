@@ -1,0 +1,32 @@
+@use "utils/_variables.scss" as *;
+@use "base/_reset.scss";
+@use "base/_typography.scss";
+@use "components/_dock.scss";
+@use "components/_header.scss";
+@use "components/_intro.scss";
+@use "components/_marquee.scss";
+@use "components/_onboarding.scss";
+@use "components/_song-player.scss";
+@use "components/_track-item.scss";
+@use "layouts/_layout.scss";
+@use "pages/_album.scss";
+@use "pages/_albums.scss";
+@use "pages/_categories.scss";
+@use "pages/_featured.scss";
+@use "pages/_login.scss";
+@use "pages/_player.scss";
+@use "pages/_playlists.scss";
+@use "utils/_mixins.scss";
+
+.hide-scrollbar {
+  overflow-y: auto;
+
+  // Firefox
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  // Chrome, Safari, Edge (WebKit)
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

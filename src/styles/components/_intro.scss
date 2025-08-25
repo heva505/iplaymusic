@@ -1,0 +1,92 @@
+@use "../utils/_variables.scss" as *;
+
+.intro {
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100dvh;
+
+  &--hide {
+    animation: fadeOut 0.6s ease forwards;
+  }
+
+  &__content {
+    text-align: center;
+    transform: scale(0.95);
+    animation: pulseIn 1s ease-in-out forwards;
+  }
+
+  &__logo {
+    width: 140px;
+    height: auto;
+    animation: pop 0.5s ease-out forwards;
+  }
+
+  &__title {
+    margin-top: $font-size-body-lg;
+    font-weight: bold;
+    font-size: $font-size-heading-md;
+    color: rgb(52, 25, 49);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.3s forwards;
+  }
+}
+
+// Animations
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: scale(0.98);
+    visibility: hidden;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseIn {
+  0% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

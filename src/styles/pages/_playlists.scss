@@ -1,0 +1,140 @@
+@use "../utils/_variables.scss" as *;
+
+.playlist {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10rem;
+  .playlist__background-img {
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+  }
+
+  &__title {
+    font-size: $font-size-heading-lg;
+    font-weight: $font-weight-bold;
+    color: white;
+    text-align: left;
+    margin-bottom: $font-size-body-lg;
+    padding: 0 2.5rem;
+  }
+
+  &__carousel {
+    display: flex;
+    margin-bottom: 3.4rem;
+  }
+
+  &__scroll {
+    display: flex;
+    gap: 10rem;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    img {
+      scroll-snap-align: center;
+      border-radius: 1rem;
+      width: 155px;
+      height: 155px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+  }
+
+  &__details {
+    text-align: center;
+    margin-bottom: 3.4rem;
+    .playlist__name {
+      font-size: $font-size-heading-lg;
+      font-weight: $font-weight-bold;
+      color: $color-dark-purple;
+      margin-bottom: 0.25rem;
+    }
+
+    .playlist__subtitle {
+      font-size: $font-size-body-md;
+      color: $color-dark-purple;
+    }
+  }
+
+  &__tracklist {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 2.5rem;
+  }
+
+  &__songs {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  &__song {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__play-button {
+    background: $gradient-primary;
+    border: none;
+    border-radius: 50%;
+    padding: 0.75rem;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__song-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__song-title {
+    font-size: $font-size-body-md;
+    font-weight: $font-weight-bold;
+    color: $color-dark-purple;
+  }
+
+  &__song-artist,
+  &__song-time {
+    font-size: $font-size-caption;
+    color: $color-dark-purple;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: center;
+    margin-top: $space-7;
+  }
+
+  &__listen-all {
+    padding: 1.6rem 1rem;
+    border: 2px solid $color-pink;
+    background: none;
+    color: $color-pink;
+    border-radius: 25rem;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-body-md;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+
+    &:hover {
+      background: $color-pink;
+      color: $color-white;
+    }
+  }
+}

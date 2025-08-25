@@ -1,0 +1,126 @@
+@use "../utils/_variables.scss" as *;
+
+.player {
+  position: fixed;
+  left: 50%;
+  bottom: 15%;
+
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1080px;
+  height: 6rem;
+  z-index: 100;
+  border-radius: 0.375rem;
+  padding: 1rem;
+  color: #fff;
+
+  background: $gradient-primary;
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 1rem;
+
+  &__left {
+    display: grid;
+    grid-template-columns: 3rem auto;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  &__cover {
+    width: 3rem;
+    height: 3rem;
+    object-fit: cover;
+    border-radius: 0.25rem;
+    display: block;
+  }
+
+  &__toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 2.5rem;
+    width: 2.5rem;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.24);
+    }
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      display: block;
+    }
+  }
+
+  &__middle {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    align-items: center;
+    overflow: hidden;
+    min-width: 0;
+  }
+
+  &__title {
+    font-weight: $font-weight-semibold;
+    line-height: 1.2;
+    margin: 0 0 0.25rem 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: $font-size-body-md;
+  }
+
+  &__seek {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 0.4rem;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 999px;
+    outline: none;
+    cursor: pointer;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 0.9rem;
+      height: 0.9rem;
+      border-radius: 50%;
+      background: #fff;
+      border: none;
+      margin-top: -0.25rem;
+    }
+
+    &::-moz-range-thumb {
+      width: 0.9rem;
+      height: 0.9rem;
+      border-radius: 50%;
+      background: #fff;
+      border: none;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    white-space: nowrap;
+  }
+
+  &__time {
+    font-weight: $font-weight-light;
+    font-size: $font-size-body-md;
+  }
+}

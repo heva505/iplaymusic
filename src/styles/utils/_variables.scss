@@ -1,0 +1,88 @@
+// =====================
+// iPlayMusic Design Tokens (SCSS variables)
+// Based on style guide: Poppins, Pink → Orange gradient
+// =====================
+
+$font-family-base: "Poppins", sans-serif;
+
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+
+// Font sizes (root 10px via html{font-size:62.5%})
+$font-size-heading-xl: 4.8rem; // 48px
+$font-size-heading-lg: 3.6rem; // 36px
+$font-size-heading-md: 3.2rem; // 32px
+$font-size-heading-sm: 2.4rem; // 24px
+$font-size-body-lg: 2rem; // 20px
+$font-size-body-md: 1.6rem; // 16px
+$font-size-body-sm: 1.4rem; // 14px
+$font-size-caption: 1.2rem; // 12px
+$font-size-smallest: 1rem; // 10px
+
+// Color palette
+$color-white: #ffffff;
+$color-black: #000000;
+
+// Brand core
+$color-pink: #ee0979; // Primary
+$color-orange: #ff6a00; // Accent / Gradient end
+
+// Dark surfaces (from style poster "Secondary"/"Additional")
+$color-secondary: #1c101d; // secondary surface
+$color-dark-purple: #171c28; // additional/surface-2
+
+// Supportive colors (from swatch row – approximate)
+$color-blue: #115793;
+$color-deep-blue: #0e3f6a;
+$color-cyan: #00a1cb;
+$color-light-cyan: #0abebe;
+$color-green: #5eb11c;
+$color-dark-green: #3a7634;
+$color-yellow: #f2bc06;
+
+// Neutrals
+$color-gray-100: #f6f7f9;
+$color-gray-200: #eceff3;
+$color-gray-300: #d9dde3;
+$color-gray-400: #b6bcc6;
+$color-gray-500: #8c94a3;
+$color-gray-600: #687083;
+$color-gray-700: #4b5163;
+$color-gray-800: #2f3442;
+$color-gray-900: #1b1e27;
+
+// Gradients
+$gradient-primary: linear-gradient(90deg, #ee0979 0%, #ff6a00 100%);
+$font-gradient-primary: linear-gradient(180deg, #ee0979 0%, #ff6a00 100%);
+
+// Shadows / radii
+$radius-lg: 2rem;
+$radius-md: 1.2rem;
+$radius-sm: 0.6rem;
+
+$shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.15);
+
+// Spacing scale
+$space-1: 0.4rem;
+$space-2: 0.8rem;
+$space-3: 1.2rem;
+$space-4: 1.6rem;
+$space-5: 2.4rem;
+$space-6: 3.2rem;
+$space-7: 4rem;
+$space-8: 4.8rem;
+
+/* Aliases for legacy names used in components */
+$color-hot-pink: #ff2d9b; // alias for vivid pink accents
+$color-red: #ff3b30; // system red (errors)
+
+// === Fallback mixins (auto-injected) ===
+@mixin ellipsis-1line() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

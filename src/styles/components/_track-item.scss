@@ -1,0 +1,59 @@
+@use "../utils/_variables.scss" as *;
+
+.track-item {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    gap: 1.6rem;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  &__icon {
+    background: $gradient-primary;
+    cursor: pointer;
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 0.75rem;
+    color: $color-white;
+  }
+
+  &__icon-play,
+  &__icon-play {
+    color: $color-white;
+    margin-left: 2px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: 65%;
+    overflow: hidden;
+    margin-right: auto;
+  }
+
+  &__title {
+    font-size: $font-size-body-md;
+    font-weight: $font-weight-bold;
+    margin-bottom: 0.3rem;
+  }
+
+  &__artist {
+    font-size: $font-size-body-sm;
+    font-weight: $font-weight-light;
+  }
+
+  &__time {
+    font-size: $font-size-body-sm;
+    font-weight: $font-weight-light;
+  }
+}

@@ -1,0 +1,9 @@
+@use "../utils/_variables.scss" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
