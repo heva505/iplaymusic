@@ -11,25 +11,15 @@ body {
 }
 
 * {
-  -ms-overflow-style: none; // IE/Edge legacy
-  scrollbar-width: none; // Firefox
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
 }
 
 *::-webkit-scrollbar {
-  display: none; // Chrome, Safari, Edge
+  display: none;
 }
 
-
-/* Theme system */
-:root {
-  --bg: #ffffff;
-  --fg: #171c28;
-}
-[data-theme='dark'] {
-  --bg: #0b0f18;
-  --fg: #f5f7fb;
-}
 body {
-  background-color: var(--bg);
-  color: var(--fg);
+  background-color: #ffffff;
+  color: #171c28;
 }
